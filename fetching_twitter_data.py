@@ -17,7 +17,7 @@ class StdOutListener(StreamListener):
     def on_data(self, data):
         try:
             print data
-            saveFile = open('academia1.txt','a')
+            saveFile = open('your_filename.txt','a')
             saveFile.write(data)
             saveFile.write('\n')
             saveFile.close()          
@@ -35,4 +35,4 @@ l = StdOutListener()
 auth = OAuthHandler(con_key, con_secret)
 auth.set_access_token(acc_token, acc_secret)
 stream = Stream(auth, l)
-stream.filter(track=['trump india'])
+stream.filter(track=['your_query'])
